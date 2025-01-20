@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import "log/slog"
+import "os"
 
 func main() {
-    fmt.Println("MAL api start")
+    logger := slog.New(slog.NewJSONHandler(os.Stdout, nil))
+    logger.Info("MAL api start")
 }
